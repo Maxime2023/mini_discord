@@ -1,0 +1,241 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Implementing REST API for mini discord
+
+Globals:
+  Function:
+    Runtime: nodejs8.10
+    Timeout: 60
+
+Resources:
+  MyApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: discordApi
+      StageName: Prod
+      DefinitionBody:
+        swagger: '2.0'
+        basePath: '/Prod'
+        schemes: 
+        - 'https'
+        securityDefinitions:
+          ygo-auth:
+            type: "apiKey"
+            name: "Authorization"
+            in: "header"
+            x-amazon-apigateway-authtype: "cognito_user_pools"
+            x-amazon-apigateway-authorizer:
+              providerARNs: 
+              - arn:aws:cognito-idp:eu-central-1:773532537154:userpool/eu-central-1_981piBfcq
+              type: "cognito_user_pools"
+        paths:
+          servers:
+            get:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            post:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            options:
+              produces:
+              - "application/json"
+              responses: {}
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:ygo-cors/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+          servers/{serverid}:
+            get:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            delete:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            options:
+              produces:
+              - "application/json"
+              responses: {}
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:ygo-cors/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+          servers/{serverid}/channels:
+            get:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            post:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            options:
+              produces:
+              - "application/json"
+              responses: {}
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:ygo-cors/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+          servers/{serverid}/channels/{channelid}:
+            get:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            delete:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            options: 
+              produces:
+              - "application/json"
+              responses: {}
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:ygo-cors/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+          servers/{serverid}/channels/{channelid}/messages:
+            get:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            post:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            options:
+              produces:
+              - "application/json"
+              responses: {}
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:ygo-cors/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+          servers/{serverid}/channels/{channelid}/messages/{messageid}:
+            get:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            delete:
+              produces:
+              - "application/json"
+              responses: {}
+              # security:
+              # - ygo-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            options:
+              produces:
+              - "application/json"
+              responses: {}
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:ygo-cors/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
