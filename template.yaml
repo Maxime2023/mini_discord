@@ -19,14 +19,14 @@ Resources:
         schemes: 
         - 'https'
         securityDefinitions:
-          ygo-auth:
+          discord-auth:
             type: "apiKey"
             name: "Authorization"
             in: "header"
             x-amazon-apigateway-authtype: "cognito_user_pools"
             x-amazon-apigateway-authorizer:
               providerARNs: 
-              - arn:aws:cognito-idp:eu-central-1:773532537154:userpool/eu-central-1_981piBfcq
+              - arn:aws:cognito-idp:eu-central-1:773532537154:userpool/eu-central-1_Lj6tzlFad
               type: "cognito_user_pools"
         paths:
           servers:
@@ -34,8 +34,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -46,8 +46,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -69,8 +69,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -81,8 +81,20 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            patch:
+              produces:
+              - "application/json"
+              responses: {}
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -104,8 +116,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -116,8 +128,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -139,8 +151,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -151,8 +163,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -174,8 +186,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -186,8 +198,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -209,8 +221,8 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
                 responses: {}
@@ -221,10 +233,31 @@ Resources:
               produces:
               - "application/json"
               responses: {}
-              # security:
-              # - ygo-auth: []
+              security:
+              - discord-auth: []
               x-amazon-apigateway-integration:
                 uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-back-end/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+            options:
+              produces:
+              - "application/json"
+              responses: {}
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:ygo-cors/invocations
+                responses: {}
+                httpMethod: "POST"
+                credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE
+                type: "aws_proxy"
+          cognito/{ressource}:
+            post:
+              produces:
+              - "application/json"
+              responses: {}
+              x-amazon-apigateway-integration:
+                uri: arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:773532537154:function:discord-cognito/invocations
                 responses: {}
                 httpMethod: "POST"
                 credentials: arn:aws:iam::773532537154:role/ygoCors-HelloWorldFunctionRole-1NXEJDYOKHISE

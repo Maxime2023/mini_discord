@@ -10,7 +10,7 @@ Globals:
     Timeout: 3
 
 Resources:
-  HelloWorldFunction:
+  minidiscord:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: discord-back-end
@@ -26,11 +26,26 @@ Resources:
             - "dynamodb:*"
             - "apigateway:*"
           Resource: '*'
-
+  cognito:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: discord-cognito
+      CodeUri: lambdas/
+      Handler: cognito.lambda_handler
+      Runtime: python3.7
+      Policies:
+      - Version: "2012-10-17"
+        Statement: 
+        - Effect: "Allow"
+          Action:
+            - "cognito-idp:*"
+            - "dynamodb:*"
+            - "apigateway:*"
+          Resource: '*'
 Outputs:
-  HelloWorldFunction:
+  minidiscord:
     Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+    Value: !GetAtt minidiscord.Arn
+  cognito:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt cognito.Arn

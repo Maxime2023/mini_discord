@@ -1,0 +1,378 @@
+{
+	"variables": [],
+	"info": {
+		"name": "discord",
+		"_postman_id": "f618a635-dbcc-b672-22bb-818c75f7fd0e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Servers",
+			"description": "",
+			"item": [
+				{
+					"name": "Create New server",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"server_name\": \"Iron-man\",\n\t\"email\": \"max1@gmail.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get all servers",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJjNjM3ODMzZS0xYzYwLTQ5ZmUtOTdlYS1iMjFiYmU4NzU2NDAiLCJjb2duaXRvOmdyb3VwcyI6WyJTdXBlckFkbWluIl0sImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb21cL2V1LWNlbnRyYWwtMV9MajZ0emxGYWQiLCJjb2duaXRvOnVzZXJuYW1lIjoiYzYzNzgzM2UtMWM2MC00OWZlLTk3ZWEtYjIxYmJlODc1NjQwIiwib3JpZ2luX2p0aSI6ImEzYjYxZGQ5LWYxNDctNDliYy04M2M3LWJmMDU0N2VjNWEwNSIsImF1ZCI6IjI0c2hmMG5kdXZzb2pya2kwZml2djZyNXNjIiwiZXZlbnRfaWQiOiIxNmRjYmVlZi0xMDE0LTRmNTktYjdjNy0xMjZiMDA0NDQ1ZTQiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYzOTczMTk0OSwiZXhwIjoxNjM5NzM1NTQ5LCJpYXQiOjE2Mzk3MzE5NDksImp0aSI6IjM2YWIyZDI3LTQwYjgtNDczYS1iZTgxLWY1OWY4MmEyYWM0OSIsImVtYWlsIjoic3VwZXJhZG1pbkBhZG1pbi5jb20ifQ.cf4YlZ1YbBuUc8fyayIt8RXKHVFeK5MX1QCzq_TnAz4kbxYnaAwDeBjdrjoF0jv_Cq8T86jvQAfjnNpwD2Bq6oAiE1MFLOLQPEHbp4C_EqZIY1fKrkIiRm7SS9Vboi4N8vXXKFRjs5zFCleBCSijykGJhBqjdw6FT_c_7POZpgwxOVyVThFjOaTlmByk7AotZQR8raNz1uSnh5vUmbfSQndxN_KfnwkeUdPS1zyOOE25PMAf701gjJeGuyoulIzhvmllOQV51JjLpMSqge3xvzJd94q640q3SxacfhlXWLrbvKjUfOQ1Gi0jzHm4k74xIHeQ8-xJ4rLEO7q6-pX8Ow",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get server",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/0292e2f2-5f16-11ec-bef0-82cc070a0499",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete server",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/0292e2f2-5f16-11ec-bef0-82cc070a0499",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Leave server",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/962bc27a-5f40-11ec-a9dsff0-a638381b0277",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"action\": \"leave\",\n\t\"user\": \"test@test.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Join server",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/962bc27a-5f40-11ec-a9dsff0-a638381b0277",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"action\": \"join\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Channels",
+			"description": "",
+			"item": [
+				{
+					"name": "Get channels from server",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/4d9dac46-5f16-11ec-b5c4-0a70e523149e/channels",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiI4YjQxMDFlMC1jOTI4LTRjNDItYTlkZi04YTA1N2YyYmM5YjkiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiYWI2ZDJkODctY2Q2ZC00MTk2LWIxNTAtZjA3MWFmMGUyN2JiIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3Mjk3MjYsImV4cCI6MTYzOTczMzMyNiwiaWF0IjoxNjM5NzI5NzI2LCJqdGkiOiI0NmYzZGVmMS0yMzJjLTRhYTQtOWEwYy1hYmVmNjM4ZjIwMmYiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.bqWKDWSFaWcQxyczpFpatgr5gSQBwS2mV5u4_Cgl72ZG2bpYx8bv8iLHA5_wqbSbwJ8DO4_xO1A6WNNlR8ZsN36lFjwdr3YlOs4CmIyf_N-bvOz0xE7wa_RBnadFiqswbc0d_NlUTkOvllaz1T49MlGDZdom0uCd3fMuQWdb99UDLVZEF5CCBpsMmv32InUW6gAzqAb48qSZGFL_GcYXPV_0bzgestc6nQWXjzkxSowhQjqzAqsXG6A2KsDWFhvnTaiE9IiDp8LH7LeqtQTRIbd8OnWUimxULor7nxTjIK4zHe0L9CQNRl8zRo3_S9MAUzH7fZBQuGgB2I_l0xZkSw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create new channel",
+					"request": {
+						"url": {
+							"raw": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/4d9dac46-5f16-11ec-b5c4-0a70e523149e/channels",
+							"protocol": "https",
+							"host": [
+								"zsdrm9u8rc",
+								"execute-api",
+								"eu-central-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"servers",
+								"4d9dac46-5f16-11ec-b5c4-0a70e523149e",
+								"channels"
+							],
+							"query": [
+								{
+									"key": "serverid",
+									"value": "",
+									"equals": false,
+									"description": "",
+									"disabled": true
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							},
+							{
+								"key": "serverid",
+								"value": "4d9dac46-5f16-11ec-b5c4-0a70e523149e",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"vert\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get specific channel",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/4d9dac46-5f16-11ec-b5c4-0a70e523149e/channels/c81234c4-5f16-11ec-8a2a-a62a8bdf3d74",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Channel",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/4d9dac46-5f16-11ec-b5c4-0a70e523149e/channels/d1b7485c-5f16-11ec-8a2a-a62a8bdf3d74",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"description": "",
+			"item": [
+				{
+					"name": "Get messages",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/5528c952-59c9-11ec-973a-eea655391345/channels/7100993e-59c9-11ec-973a-eea655391345/messages",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create message",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/5528c952-59c9-11ec-973a-eea655391345/channels/7100993e-59c9-11ec-973a-eea655391345/messages",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"text\": \"zeub\",\n\t\"email\": \"max@gmail.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete message",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/servers/5528c952-59c9-11ec-973a-eea655391345/channels/7100993e-59c9-11ec-973a-eea655391345/messages/ddf38498-59ce-11ec-a2b6-9a32de1031b9",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJraWQiOiJDOExTK3Y2WVpsUlI0MjlSNlpzUkVyb1hhbTg5NGJMb0FINWhuRTByVUVZPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxZDdkZjJmYy0wZTMyLTRiM2QtYWM2Mi04NjQwZjJhZGUwMGUiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tXC9ldS1jZW50cmFsLTFfTGo2dHpsRmFkIiwiY29nbml0bzp1c2VybmFtZSI6IjFkN2RmMmZjLTBlMzItNGIzZC1hYzYyLTg2NDBmMmFkZTAwZSIsIm9yaWdpbl9qdGkiOiJhNzFjN2Y0NC04OTY3LTQ4M2UtYjgxMS1hZTBhOTk3N2ZiODEiLCJhdWQiOiIyNHNoZjBuZHV2c29qcmtpMGZpdnY2cjVzYyIsImV2ZW50X2lkIjoiMmRmZWQ1ZWUtZjRlMC00NTc2LWJkYWYtMWE0ZWYxN2Y2NGYzIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2Mzk3MzAxMjksImV4cCI6MTYzOTczMzcyOSwiaWF0IjoxNjM5NzMwMTI5LCJqdGkiOiJmNGFiZGIzMy00MjE5LTQwYWEtYTRmMC1hYjY2MzVmNGUzN2IiLCJlbWFpbCI6Im1heGltZWRpemllcjA2NTAwQGdtYWlsLmNvbSJ9.UF--eKtf10PiEMqZ0MAnYVUQnhTfnYci7xz2eKuaVbGYNcxGVPBIlgFAFXGkg_qPUFCy930_6TemMlkR_rcAvx3TOBIyuaUx8QCUw92NtDjH-lbwEkLfOBBd5bjvY6J-_eIWqXCEXKkONUkpGwEfhwMpWMj3hIY_wV_dtSbcMk8C3_FlIDVBKir_4pHvr-aNEhy7a8CgT01NfEjZdQE76OuJIOXz02drlUnEoR97Czi_9HdlEadaUigj4sTDZI2-a2qcPT9MUcN1dN42hgCHOoTffxKBC1qlF0U4b_VqpcrlvlSJds9TzREkGmMme1Ma_fdAoD04ZxdOjU9RFJtAAw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cognito",
+			"description": "",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/cognito/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"maximedizier06500@gmail.com\",\n\t\"password\": \"Pingouin98@\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/cognito/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"maximedizier06500@gmail.com\",\n\t\"password\": \"Pingouin98@\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Change to Admin",
+					"request": {
+						"url": "https://zsdrm9u8rc.execute-api.eu-central-1.amazonaws.com/Prod/cognito/admin",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"test@test.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
